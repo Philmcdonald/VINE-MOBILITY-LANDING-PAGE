@@ -43,6 +43,8 @@ const Questionnaire: React.FC = () => {
 
     // Move to the next question
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+
+    console.log(answers);
   };
 
   const currentQuestion = questions[currentQuestionIndex];

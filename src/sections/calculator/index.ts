@@ -25,12 +25,12 @@ interface CalculatorResults {
 }
 
 // Mapping of vehicle types to average tank sizes (in liters)
-const tankSizeMapping: Record<CalculatorInputs["vehicleType"], number> = {
-  "small car": 40,
-  sedan: 50,
-  suv: 70,
-  truck: 100,
-};
+// const tankSizeMapping: Record<CalculatorInputs["vehicleType"], number> = {
+//   "small car": 40,
+//   sedan: 50,
+//   suv: 70,
+//   truck: 100,
+// };
 
 // Mapping of daily travel distance to average distance in km
 const travelDistanceMapping: Record<
@@ -53,7 +53,7 @@ const averageElectricityConsumptionPer100Km = 15; // 15 kWh per 100 km actual is
 
 // Main calculation function
 function calculateCostComparison(inputs: CalculatorInputs): CalculatorResults {
-  const tankSize = tankSizeMapping[inputs.vehicleType]; // No actual use case for this
+  // const tankSize = tankSizeMapping[inputs.vehicleType]; // No actual use case for this
 
   const dailyDistance = travelDistanceMapping[inputs.dailyTravelDistance];
 
