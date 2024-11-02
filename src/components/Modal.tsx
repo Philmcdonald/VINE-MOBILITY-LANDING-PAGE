@@ -15,7 +15,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, children }) => {
 
   const handleCancel = () => {
     console.log("Clicked cancel button");
-    dispatch(toggleModal());
+    dispatch(toggleModal({}));
   };
 
   return (

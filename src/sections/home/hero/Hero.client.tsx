@@ -8,7 +8,7 @@ export enum ButtonType {
 }
 
 const HeroButton = () => {
-  const openModal = useOpenModal();
+  const openModal = useOpenModal("register");
 
   return (
     <Button

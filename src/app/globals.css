@@ -93,6 +93,10 @@ button {
 
 /* =========== Ant Design Tweaks =========== */
 
+.ant-modal-content {
+  border-radius: 20px !important;
+}
+
 .ant-select.ant-select-lg.ant-select-outlined .ant-select-selector {
   border: 1px solid black; /* Set border color */
   padding-top: 10px; /* Adjust top padding */

@@ -8,7 +8,8 @@ import Icon from "./Icon";
 import { useOpenModal } from "@/hooks";
 
 const Footer = () => {
-  const openModal = useOpenModal();
+  const openModal = useOpenModal("register");
+
   return (
     <footer className="bg-black pb-1">
       <Section>

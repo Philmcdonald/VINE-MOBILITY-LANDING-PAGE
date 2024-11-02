@@ -9,6 +9,9 @@ import Heading from "./Heading";
 import HeroSlide from "./HeroSlide";
 import Modal from "./Modal";
 import Icon from "./Icon";
+import QuestionaireModal from "./QuestionaireModal";
+import RegisterModal from "./RegisterModal";
+import Confetti from "./Confetti";
 
 export {
   Button,
@@ -22,4 +25,7 @@ export {
   HeroSlide,
   Modal,
   Icon,
+  QuestionaireModal,
+  RegisterModal,
+  Confetti,
 };

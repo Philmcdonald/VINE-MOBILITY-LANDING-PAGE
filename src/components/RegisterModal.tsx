@@ -8,43 +8,40 @@ import { Form, Input } from "antd";
 import { useDispatch } from "react-redux";
 import { toggleModal } from "@/app/state/features/modal/modal.slice";
 import { useState } from "react";
+import postRecords from "@/utils/helpers/sheet.helper";
+
+interface FormAttributeI {
+  name: string;
+  email: string;
+  phone: string;
+}
 
 const RegisterModal = () => {
-  const { isOpen } = useSelector((state: RootState) => state.modal);
+  const { openRegisterModal } = useSelector((state: RootState) => state.modal);
   const [loading, setLoading] = useState(false);
+  const [form] = Form.useForm();
 
   const dispatch = useDispatch();
 
-  const onFinish = async (values) => {
+  const onFinish = async (values: FormAttributeI) => {
     const url =
       "https://script.google.com/macros/s/AKfycbz0vppZdm7yUzpBUqGtvVgvrHjy14KkFg2uYdHkQagRAgFJubkPe3D3MknbsrJ2iTom3w/exec";
 
-    setLoading(true);
+    const loading = (value: boolean) => {
+      setLoading(value);
+    };
 
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        body: JSON.stringify(values),
-      });
+    const records = await postRecords(url, values, loading);
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      const data = await response.json();
-
-      setLoading(false);
-
-      console.log(data);
-    } catch (err) {
-      console.error("Fetch error:", err);
-
-      setLoading(false);
+    if (records) {
+      dispatch(toggleModal({ type: "questions" }));
     }
+
+    form.resetFields();
   };
 
   return (
-    <Modal isOpen={isOpen}>
+    <Modal isOpen={openRegisterModal}>
       <div className="pt-10 pb-14 px-4">
         <div className="flex justify-between mb-7">
           <h2 className="font-semibold leading-[1.2] text-[40px]">
@@ -54,7 +51,7 @@ const RegisterModal = () => {
 
           <button
             className="mt-[10px] self-start"
-            onClick={() => dispatch(toggleModal())}
+            onClick={() => dispatch(toggleModal({ type: "register" }))}
           >
             <Image
               alt="close btn"
@@ -66,7 +63,12 @@ const RegisterModal = () => {
           </button>
         </div>
 
-        <Form name="register" onFinish={onFinish} className="grid grid-cols-1 ">
+        <Form
+          form={form}
+          name="register"
+          onFinish={onFinish}
+          className="grid grid-cols-1 "
+        >
           <div className="w-[80%] grid grid-cols-1 gap-9">
             <Form.Item
               className="font-bold"

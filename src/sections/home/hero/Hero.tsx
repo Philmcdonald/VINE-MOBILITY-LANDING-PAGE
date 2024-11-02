@@ -6,7 +6,7 @@ const Hero = () => {
     <Section>
       <div className="grid grid-cols-2 items-center">
         {/* ============== Content ================ */}
-        <div className="border ">
+        <div className=" ">
           <Heading>
             The
             <HeaderGreen>Future</HeaderGreen>

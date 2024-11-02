@@ -8,7 +8,7 @@ export enum ButtonType {
 }
 
 const PropositionButton = () => {
-  const openModal = useOpenModal();
+  const openModal = useOpenModal("register");
 
   return (
     <Button

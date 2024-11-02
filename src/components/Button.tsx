@@ -11,9 +11,17 @@ interface ButtonProps {
   width?: string;
   textSize?: string;
   fn: () => void;
+  loading?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ type, text, width, textSize, fn }) => {
+const Button: React.FC<ButtonProps> = ({
+  type,
+  text,
+  width,
+  textSize,
+  fn,
+  loading,
+}) => {
   return (
     <button
       onClick={() => {
@@ -31,7 +39,7 @@ const Button: React.FC<ButtonProps> = ({ type, text, width, textSize, fn }) => {
       
       `}
     >
-      {text}
+      {loading ? "loading..." : text}
     </button>
   );
 };

@@ -6,16 +6,16 @@ import Image from "next/image";
 const HeroSlide = () => {
   const maxNumber = 2;
   const [current, setCurrent] = useState(1);
-  const [fade, setFade] = useState(false); // State for fade effect
+  const [fade, setFade] = useState(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setFade(true); // Start fading out
+      setFade(true);
       setTimeout(() => {
         setCurrent((prev) => (prev < maxNumber ? prev + 1 : 1));
-        setFade(false); // Reset fade for the new image
-      }, 500); // Duration of the fade-out transition
-    }, 5000); // Time interval between image changes
+        setFade(false);
+      }, 500);
+    }, 5000);
 
     return () => clearInterval(intervalId);
   }, [maxNumber]);
