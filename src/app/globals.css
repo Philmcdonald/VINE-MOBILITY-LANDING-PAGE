@@ -35,7 +35,7 @@ button {
 .heroSlide {
   height: 70vh;
   width: 85%;
-  background-image: url("../image/hero/hero1.png");
+  background-image: url("../image/hero/heroOne.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -54,7 +54,7 @@ button {
 .propositionSlide {
   height: 70vh;
   width: 100%;
-  background-image: url("../image/proposition/img1.png");
+  background-image: url("../image/proposition/imgOne.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -72,22 +72,22 @@ button {
 
 @keyframes animate {
   0% {
-    background-image: url("../image/hero/hero1.png");
+    background-image: url("../image/hero/heroOne.png");
   }
   100% {
-    background-image: url("../image/hero/hero2.png");
+    background-image: url("../image/hero/heroTwo.png");
   }
 }
 
 @keyframes propositionAnimation {
   0% {
-    background-image: url("../image/proposition/img1.png");
+    background-image: url("../image/proposition/imgOne.png");
   }
   50% {
-    background-image: url("../image/proposition/img2.png");
+    background-image: url("../image/proposition/imgTwo.png");
   }
   100% {
-    background-image: url("../image/proposition/img3.png");
+    background-image: url("../image/proposition/imgThree.png");
   }
 }
 

@@ -6,7 +6,6 @@ import Section from "./Section";
 import HeaderGreen from "./HeaderGreen";
 import Card from "./Card";
 import Heading from "./Heading";
-import HeroSlide from "./HeroSlide";
 import Modal from "./Modal";
 import Icon from "./Icon";
 import QuestionaireModal from "./QuestionaireModal";
@@ -22,7 +21,6 @@ export {
   HeaderGreen,
   Card,
   Heading,
-  HeroSlide,
   Modal,
   Icon,
   QuestionaireModal,
