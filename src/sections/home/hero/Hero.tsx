@@ -4,9 +4,9 @@ import { HeroButton } from "./Hero.client";
 const Hero = () => {
   return (
     <Section>
-      <div className="grid grid-cols-2 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-[50%_50%] gap-10 md:gap-0 items-center">
         {/* ============== Content ================ */}
-        <div className=" ">
+        <div className="text-center md:text-left">
           <Heading>
             The
             <HeaderGreen>Future</HeaderGreen>
@@ -15,36 +15,39 @@ const Hero = () => {
             <HeaderGreen>Property</HeaderGreen>
           </Heading>
 
-          <p className="font-semibold text-md w-[85%] mb-5">
+          <p className="font-medium text-[.9rem] md:text-[1.05rem] mb-5">
             <span>
               Vine Mobility brings smart EV chargers, custom-designed for homes,
               businesses, and commercial properties. Pinnacle of luxury in
               electric mobility.
             </span>
             <br />
-            <span className="mt-5 block">
+            <span className="mt-4 block">
               Access an exclusive discount for the first 100 subscribers before
               launch day!
             </span>
           </p>
 
-          <div className="flex items-center gap-5 w-full mt-6">
+          <div className="flex items-center gap-5 w-full mt-6 flex-wrap">
             <HeroButton />
-            <p className="font-bold text-2xl">Subscribe Now</p>
+
+            <p className="font-bold hidden md:block text-md md:text-[1.2rem]">
+              Subscribe Now
+            </p>
           </div>
         </div>
 
         {/* ============== Image ================ */}
-        <div className="h-[70vh] border max-h-[35rem] rounded-xl w-full justify-self-end relative heroSlide">
-          <div className="w-[100px] py-1 px-2 text-primary-main text-center text-sm bg-white rounded-md border border-primary-main absolute top-[15%] right-[-50px]">
+        <div className="h-[50vh] md:h-[70vh] max-h-[25rem] md:max-h-[30rem] rounded-2xl w-full md:w-[88%] border justify-self-end relative heroSlide">
+          <div className="w-[100px] py-1 px-2 text-primary-main text-center text-sm bg-white rounded-md border border-primary-main hidden md:block md:absolute top-[15%] right-[-50px] sm:right-[-25px]">
             Businesses
           </div>
 
-          <div className="w-[100px] py-1 px-2 text-primary-main text-center text-sm bg-white rounded-md border border-primary-main absolute top-[35%] left-[-50px]">
+          <div className="w-[100px] hidden md:block absolute py-1 px-2 text-primary-main text-center text-sm bg-white rounded-md border border-primary-main  top-[35%] left-[-50px] sm:left-[-40px]">
             Homes
           </div>
 
-          <div className=" py-1 px-2 text-primary-main text-center text-sm bg-white rounded-md border border-primary-main absolute top-[75%] right-[-50px]">
+          <div className=" md:block hidden absolute py-1 px-2 text-primary-main text-center text-sm bg-white rounded-md border border-primary-main  top-[75%] right-[-50px] sm:right-[-25px]">
             Commercial Properties
           </div>
         </div>

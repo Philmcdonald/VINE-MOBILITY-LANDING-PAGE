@@ -10,7 +10,7 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ children, flex, classes, id }) => {
   return (
-    <section className="my-14" id={id}>
+    <section className="my-10 md:my-12 lg:my-16" id={id}>
       <Container classes={classes} flex={flex}>
         {children}
       </Container>

@@ -50,16 +50,16 @@ const Questionnaire: React.FC = () => {
   const currentQuestion = questions[currentQuestionIndex];
 
   return (
-    <div className="flex flex-col items-center h-[60%] w-[90%]  py-20  mx-auto">
+    <div className="flex flex-col items-center md:h-[60%] w-[97%] md:w-[90%] pt-8 md:py-20  mx-auto">
       {currentQuestion ? (
         <div
           key={currentQuestion.id}
-          className="w-full mb-8 p-4 py-20 rounded-lg border shadow-md"
+          className="w-full mb-8 md:p-4 py-10 md:py-20 rounded-lg border shadow-md"
         >
-          <h3 className="text-center font-semibold mb-5 text-[24px]">
+          <h3 className="text-center font-semibold mb-5 text-[20px] md:text-[24px]">
             Select the appropriate answer
           </h3>
-          <p className="text-center text-[12px] w-[70%] mx-auto text-base mb-10">
+          <p className="text-center text-[11px] md:text-[12px] w-[80%] md:w-[70%] mx-auto text-base mb-10">
             {currentQuestion.text}
           </p>
           <div className="flex justify-center space-x-10 mb-3">

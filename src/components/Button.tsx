@@ -27,17 +27,18 @@ const Button: React.FC<ButtonProps> = ({
       onClick={() => {
         fn();
       }}
-      className={`py-[16px] font-semibold rounded-lg ${
-        textSize ? textSize : "text-[16px]"
-      } ${width ? width : "px-14"}  
-      
+      className={`mx-auto md:mx-0 py-[12px] md:py-[16px] font-semibold rounded-lg 
+      ${textSize ? textSize : "text-[14px] md:text-[16px]"} 
+      ${width ? width : "px-12"}  
+  
       ${
         type === ButtonType.green
           ? "bg-primary-main text-white"
           : "text-primary-main border-2 border-primary-main"
       }
-      
-      `}
+  
+      sm:text-[14px] lg:text-[18px]
+    `}
     >
       {loading ? "loading..." : text}
     </button>

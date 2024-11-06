@@ -84,18 +84,18 @@ const Header = () => {
     <header className="bg-white shadow-sm text-md">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex items-center justify-between py-5 w-[95%] md:max-w-[800px] lg:max-w-[1120px]"
       >
         {/* ================================================================== */}
-
+        {/* Logo Section */}
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <div className="ml-[-30px] ">
+            <span className="sr-only">Vine Mobility</span>
+            <div className="">
               <Image
-                alt=""
+                alt="Vine Mobility Logo"
                 src="/vine-mobility/logo.png"
-                className="h-16 w-auto"
+                className="h-10 md:h-16 w-auto"
                 height={150}
                 width={200}
               />
@@ -104,7 +104,7 @@ const Header = () => {
         </div>
 
         {/* ================================================================== */}
-
+        {/* Mobile Menu Button */}
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -117,7 +117,7 @@ const Header = () => {
         </div>
 
         {/* ================================================================== */}
-
+        {/* Desktop Menu */}
         <div className="hidden text-lg lg:flex lg:gap-x-16 mr-7">
           <Link href="/">
             <span className="font-semibold hover:text-primary-main leading-6 text-gray-900">
@@ -127,35 +127,33 @@ const Header = () => {
 
           <a
             href="#proposition"
-            className="hover:text-primary-main font-semibold  leading-6 text-gray-900"
+            className="hover:text-primary-main font-semibold leading-6 text-gray-900"
           >
-            Why vine mobility?
+            Why Vine Mobility?
           </a>
           <a
             href="#testimonial"
-            className=" hover:text-primary-main font-semibold leading-6 text-gray-900"
+            className="hover:text-primary-main font-semibold leading-6 text-gray-900"
           >
-            What are people saying
+            What Are People Saying?
           </a>
         </div>
 
         {/* ================================================================== */}
-
+        {/* Desktop Button */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Button
             fn={handleNavigate}
             type={ButtonType.green}
             textSize="text-xl"
-            width="px-[60px]"
-            text="Ev Calculator"
+            // width="px-[60px]"
+            text="EV Calculator"
           />
         </div>
-
-        {/* ================================================================== */}
       </nav>
 
       {/* ================================================================== */}
-
+      {/* Mobile Menu (Dialog) */}
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
@@ -165,10 +163,10 @@ const Header = () => {
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">Vine Mobility</span>
               <img
-                alt=""
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                alt="Vine Mobility Logo"
+                src="/vine-mobility/logo.png"
                 className="h-8 w-auto"
               />
             </a>
@@ -181,6 +179,7 @@ const Header = () => {
               <XMarkIcon aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>
+
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">

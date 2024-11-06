@@ -19,11 +19,17 @@ const cardContent = [
 
 const Proposition = () => {
   return (
-    <Section classes="border-t border-t-[#8FC03FB2] pt-14" id="proposition">
+    <Section
+      classes="border-t border-t-[#8FC03FB2] pt-8 md:pt-14"
+      id="proposition"
+    >
       <div className="text-center">
-        <h3 className="font-bold text-3xl mb-10">Why Vine Mobility?</h3>
+        <h3 className="font-bold text-3xl sm:text-4xl mb-10">
+          Why Vine Mobility?
+        </h3>
 
-        <div className="grid grid-cols-3 gap-16">
+        {/* Card Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-14">
           {cardContent.map((card, index) => {
             return (
               <Card key={index}>
@@ -31,13 +37,13 @@ const Proposition = () => {
                   <Image
                     alt=""
                     src={card.src}
-                    className="w-auto h-14 mb-2"
+                    className="w-auto h-14 mb-2 mx-auto"
                     height={500}
                     width={500}
-                  ></Image>
+                  />
                 </div>
 
-                <p className="font-bold text-lg leading-snug w-[80%]">
+                <p className="font-bold text-lg leading-snug w-[80%] mx-auto sm:w-[90%]">
                   {card.text}
                 </p>
               </Card>
@@ -46,15 +52,16 @@ const Proposition = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-[40%_55%] gap-16 pt-10 pb-3 mt-16">
-        <div className="propositionSlide"></div>
+      {/* Second Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-16 md:pt-10 md:pb-3 md:mt-16">
+        <div className="propositionSlide mt-[1.5rem] h-[50vh] md:h-[70vh]"></div>
 
-        <div className="self-center">
+        <div className="self-center mt-5">
           <Heading>
             Preview of <HeaderGreen>Vine Mobility</HeaderGreen> EV Charging
             product launching in 2025
           </Heading>
-          <p className="text-lg leading-snug font-semibold mb-5">
+          <p className="font-medium text-[.9rem] md:text-[1.05rem] leading-snug mb-5">
             The first 100 sign up gets access to: <br /> - Exclusive discount on
             all EV chargers before launch day <br /> - Free installation
           </p>

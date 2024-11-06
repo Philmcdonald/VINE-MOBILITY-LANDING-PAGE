@@ -21,11 +21,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, children }) => {
   return (
     <>
       <PopUp
-        className="rounded-full"
+        className="rounded-full w-[95%] md:w-[42vw]"
         open={isOpen}
         onCancel={handleCancel}
         centered={true}
-        width="42vw"
+        width=""
         footer=""
       >
         {children}

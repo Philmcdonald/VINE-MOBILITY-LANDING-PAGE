@@ -11,7 +11,7 @@ const Container: React.FC<ContainerProps> = ({ children, flex, classes }) => {
     <div
       className={`mx-auto ${classes ? classes : ""} ${
         flex ? "flex" : ""
-      } max-w-[1200px]`}
+      } w-[95%] max-w-[1120px] `}
     >
       {children}
     </div>

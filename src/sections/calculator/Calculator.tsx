@@ -68,7 +68,7 @@ const Calculator = () => {
       <div>
         <Form onFinish={onFinish} form={form} className="grid grid-cols-1 ">
           {/* ================ Form ==================== */}
-          <div className="w-[55%] grid grid-cols-1 gap-9">
+          <div className="text-center md:text-left w-full md:w-[55%] grid grid-cols-1 gap-4 md:gap-9">
             <>
               <h1 className="text-4xl">Discover your savings with an EV</h1>
               <p className="text-[16px]">
@@ -124,26 +124,28 @@ const Calculator = () => {
           </div>
 
           {/* ================ Calculator ==================== */}
-          <div className="mt-20">
-            <p className="text-lg mb-4 font-semibold">
+          <div className="mt-5 md:mt-20">
+            <p className="text-lg text-center md:text-left mb-4 font-semibold">
               Use this to calculate your EV energy cost
             </p>
 
-            <p className="text-lg mb-4 font-semibold">
+            <p className="text-lg hidden md:block text-center md:text-left  mb-4 font-semibold">
               Current Vehicle Information:
             </p>
 
             <div className="border rounded-tl-3xl rounded-tr-3xl  overflow-hidden">
-              <div className="grid grid-cols-4 text-lg text-center text-white py-5 bg-primary-main">
-                <p>Current Car Type</p>
-                <p>Average Daily KM Traveled</p>
-                <p>Petrol Cost (per litre)</p>
-                <p>Electricity cost (Kwh)</p>
+              <div className=" md:grid md:grid-cols-4 grid-cols-1 text-lg text-center text-white py-5 bg-primary-main">
+                <p className="md:hidden">Energy Saving Calculator</p>
+                <p className="hidden md:block">Current Car Type</p>
+                <p className="hidden md:block">Average Daily KM Traveled</p>
+                <p className="hidden md:block">Petrol Cost (per litre)</p>
+                <p className="hidden md:block">Electricity cost (Kwh)</p>
               </div>
 
-              <div className="grid grid-cols-4 py-8 place-items-center">
+              <div className="grid grid-cols-1 md:grid-cols-4 py-8 place-items-center">
                 <Form.Item
                   className="w-[80%]"
+                  label="Car type"
                   name="carType"
                   rules={[
                     { required: true, message: "Please select an option!" },
@@ -160,6 +162,7 @@ const Calculator = () => {
 
                 <Form.Item
                   className="w-[80%]"
+                  label="Average Daily KM Traveled"
                   name="dailyTravelDistance"
                   rules={[{ required: true, message: "Please select a model" }]}
                 >
@@ -172,7 +175,11 @@ const Calculator = () => {
                   ></Select>
                 </Form.Item>
 
-                <Form.Item name="petrolPricePerLitre" className="w-[80%]">
+                <Form.Item
+                  name="petrolPricePerLitre"
+                  label="Petrol Cost (per litre)"
+                  className="w-[80%]"
+                >
                   <Input
                     className="py-3 font-normal text-[12px] border border-black"
                     type="number"
@@ -182,7 +189,11 @@ const Calculator = () => {
                   ></Input>
                 </Form.Item>
 
-                <Form.Item name="electricityPricePerKwh" className="w-[80%]">
+                <Form.Item
+                  name="electricityPricePerKwh"
+                  label="Electricity cost (Kwh)"
+                  className="w-[80%]"
+                >
                   <Input
                     className="py-3 font-normal text-[12px] border border-black"
                     type="number"
@@ -229,7 +240,7 @@ const Calculator = () => {
                   width="w-[40%]"
                   type={ButtonType.green}
                   text="Submit"
-                  textSize="text-[24px]"
+                  textSize="text-[20px] md:text-[24px]"
                   fn={() => {
                     console.log("working well");
                   }}

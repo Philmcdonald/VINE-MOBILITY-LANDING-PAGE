@@ -18,6 +18,7 @@
 
 body {
   font-family: Inter, sans-serif;
+  font-size: 1rem;
 }
 
 html {
@@ -34,7 +35,6 @@ button {
 
 .heroSlide {
   height: 70vh;
-  width: 85%;
   background-image: url("/image/hero/heroOne.png");
   background-size: cover;
   background-position: center;
@@ -52,7 +52,7 @@ button {
 }
 
 .propositionSlide {
-  height: 70vh;
+
   width: 100%;
   background-image: url("/image/proposition/imgOne.png");
   background-size: contain;

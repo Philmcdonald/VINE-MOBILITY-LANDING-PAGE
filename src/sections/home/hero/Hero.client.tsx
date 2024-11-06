@@ -15,7 +15,7 @@ const HeroButton = () => {
       fn={openModal}
       type={ButtonType.clear}
       text="Join Our Waitlist"
-      width="px-10"
+      width="px-8"
     />
   );
 };

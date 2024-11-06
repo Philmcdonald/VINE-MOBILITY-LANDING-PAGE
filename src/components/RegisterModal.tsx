@@ -42,9 +42,9 @@ const RegisterModal = () => {
 
   return (
     <Modal isOpen={openRegisterModal}>
-      <div className="pt-10 pb-14 px-4">
+      <div className="pt-5 md:pt-10 pd-10 md:pb-14 md:px-4">
         <div className="flex justify-between mb-7">
-          <h2 className="font-semibold leading-[1.2] text-[40px]">
+          <h2 className="font-semibold leading-[1.2] text-[30px] md:text-[40px]">
             Fill up your
             <br /> information
           </h2>
@@ -56,7 +56,7 @@ const RegisterModal = () => {
             <Image
               alt="close btn"
               src="/close.svg"
-              className="h-9 w-auto"
+              className="h-6 md:h-9 w-auto"
               height={4}
               width={4}
             />
@@ -69,7 +69,7 @@ const RegisterModal = () => {
           onFinish={onFinish}
           className="grid grid-cols-1 "
         >
-          <div className="w-[80%] grid grid-cols-1 gap-9">
+          <div className="w-full md:w-[80%] grid grid-cols-1 md:gap-9">
             <Form.Item
               className="font-bold"
               layout="vertical"
@@ -116,7 +116,7 @@ const RegisterModal = () => {
             </Form.Item>
           </div>
 
-          <span className="mt-14 text-[14px] leading-5 font-medium text-center w-[85%] mx-auto">
+          <span className="mt-1 md:mt-14 text-[11px] leading-5 font-medium text-center w-[90%] md:w-[85%] mx-auto">
             Before you sign up to our waitlist, kindly help us answer the
             following questionnaire. Thank you!
           </span>
