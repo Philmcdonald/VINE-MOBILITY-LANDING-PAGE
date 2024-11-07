@@ -1,5 +1,4 @@
 import { createTransport, Transporter } from "nodemailer";
-import nodemailer from "nodemailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
 import { MailOptionsAttributeI } from "./interface";
 import fs from "fs";
@@ -56,7 +55,7 @@ class MailService {
         };
 
         if (templateName) {
-            const filePath = `./src/resources/templates/${templateName}.html`;
+            const filePath = `./src/app/api/mail/templates/${templateName}.html`;
             const source = fs.readFileSync(filePath, "utf-8").toString();
             const template = Handlebars.compile(source);
             const html = template(replacements);
