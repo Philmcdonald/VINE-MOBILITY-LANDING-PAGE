@@ -17,14 +17,11 @@ const Hero = () => {
 
           <p className="font-medium text-[.9rem] md:text-[1.05rem] mb-5">
             <span>
-              Vine Mobility brings smart EV chargers, custom-designed for homes,
-              businesses, and commercial properties. Pinnacle of luxury in
-              electric mobility.
+              Join the future of electric mobility with Vine MObility's smart EV charger. Designed for homes, businesses, and public spaces, out charger enhance property value and attract eco-conscious buys and tenants.
             </span>
             <br />
             <span className="mt-4 block">
-              Access an exclusive discount for the first 100 subscribers before
-              launch day!
+              Don't miss our exclusive pre-launch offer!
             </span>
           </p>
 
@@ -53,6 +50,6 @@ const Hero = () => {
         </div>
       </div>
     </Section>
-  );
+  )
 };
 export default Hero;

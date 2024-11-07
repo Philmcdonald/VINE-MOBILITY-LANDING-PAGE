@@ -62,8 +62,8 @@ const Proposition = () => {
             product launching in 2025
           </Heading>
           <p className="font-medium text-[.9rem] md:text-[1.05rem] leading-snug mb-5">
-            The first 100 sign up gets access to: <br /> - Exclusive discount on
-            all EV chargers before launch day <br /> - Free installation
+            The first 100 sign up gets access to: <br /> - <strong>Exclusive discount</strong> on
+            all EV chargers before launch day <br /> - <strong>Free installation</strong>
           </p>
 
           <PropositionButton />
