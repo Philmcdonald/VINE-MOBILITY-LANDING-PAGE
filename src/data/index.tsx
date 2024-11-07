@@ -78,7 +78,7 @@ const questions: Question[] = [
   {
     id: 1,
     question: "one",
-    text: "Technologies like Smart EV Chargers would increase the value of your properties ",
+    text: "Technologies like Smart EV Chargers would increase the value of your properties",
   },
   {
     id: 2,
