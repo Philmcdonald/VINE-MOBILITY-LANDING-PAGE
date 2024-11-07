@@ -17,7 +17,9 @@ const Hero = () => {
 
           <p className="font-medium text-[.9rem] md:text-[1.05rem] mb-5">
             <span>
-              Join the future of electric mobility with Vine MObility's smart EV charger. Designed for homes, businesses, and public spaces, out charger enhance property value and attract eco-conscious buys and tenants.
+              Join the future of electric mobility with Vine MObility's smart EV charger. 
+              Designed for homes, businesses, and public spaces, out charger enhance property 
+              value and attract eco-conscious buys and tenants.
             </span>
             <br />
             <span className="mt-4 block">
