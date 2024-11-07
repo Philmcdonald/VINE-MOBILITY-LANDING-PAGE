@@ -1,12 +1,6 @@
-interface RegisterAttributeI {
-  name: string;
-  email: string;
-  phone: string;
-}
-
 export const postRecords = async (
   url: string,
-  values: RegisterAttributeI,
+  values: Record<string, unknown>,
   setLoading: (loading: boolean) => void
 ) => {
   setLoading(true);

@@ -68,4 +68,75 @@ const travelDistanceOptions = [
   { value: "superLong", label: <span>200+ km</span> },
 ];
 
-export { evModels, milesRange, priceRange, tankSize, travelDistanceOptions };
+type Question = {
+  id: number;
+  text: string;
+  question: string;
+};
+
+const questions: Question[] = [
+  {
+    id: 1,
+    question: "one",
+    text: "Technologies like Smart EV Chargers would increase the value of your properties ",
+  },
+  {
+    id: 2,
+    question: "two",
+    text: "Incorporating cutting-edge technology like Smart EV chargers would significantly increase the value of your properties? ",
+  },
+  {
+    id: 3,
+    question: "three",
+    text: "Would you like to pioneer adopting green technologies in your properties?",
+  },
+  {
+    id: 4,
+    question: "four",
+    text: "With the rising cost of petrol would you go for alternatives? ",
+  },
+  {
+    id: 5,
+    question: "five",
+    text: "Are you interested in a home upgrade that would increase the market value of your property? ",
+  },
+  {
+    id: 6,
+    question: "six",
+    text: "Does the idea of contributing to a greener environment appeal to you?",
+  },
+  {
+    id: 7,
+    question: "seven",
+    text: "Properties that include modern amenities like Smart EV chargers is valuable and would attract high-end clients? ",
+  },
+  {
+    id: 8,
+    question: "eight",
+    text: "Integrating smart EV chargers into your homes would position you as a forward-thinker?",
+  },
+  {
+    id: 9,
+    question: "nine",
+    text: "Providing EV charging facilities at your business premises would attract more customers/clients?",
+  },
+  {
+    id: 10,
+    question: "ten",
+    text: "Would you be interested in a service that can potentially reduce your operational costs by leveraging solar-powered EV chargers?",
+  },
+  {
+    id: 11,
+    question: "ten",
+    text: "Providing EV charging facilities at your business premises would attract more customers/clients?",
+  },
+];
+
+export {
+  evModels,
+  milesRange,
+  priceRange,
+  tankSize,
+  travelDistanceOptions,
+  questions,
+};

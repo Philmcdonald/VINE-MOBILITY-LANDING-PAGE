@@ -4,29 +4,18 @@ import React, { useState } from "react";
 import { Icon, Confetti } from "@/components";
 import { useRouter } from "next/navigation";
 import { resetModals } from "@/app/state/features/modal/modal.slice";
-import { useDispatch } from "react-redux";
-
-type Question = {
-  id: number;
-  text: string;
-};
-
-const questions: Question[] = [
-  {
-    id: 1,
-    text: "Technologies like Smart EV Chargers would increase the value of your properties?",
-  },
-  {
-    id: 2,
-    text: "Are you considering the installation of EV charging stations?",
-  },
-  { id: 3, text: "Do you think EV chargers will attract more customers?" },
-  // Add more questions here if needed
-];
+import { useDispatch, useSelector } from "react-redux";
+import { questions } from "../../data";
+import { RootState } from "@/app/state/store";
+import postRecords from "@/utils/helpers/sheet.helper";
 
 const Questionnaire: React.FC = () => {
   const [answers, setAnswers] = useState<{ [key: number]: string }>({});
+  const [loading, setLoading] = useState(false);
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+  const { registerData } = useSelector((state: RootState) => state.form);
 
   const dispatch = useDispatch();
   const router = useRouter();
@@ -35,16 +24,33 @@ const Questionnaire: React.FC = () => {
     router.push("/");
   };
 
-  const handleAnswer = (questionId: number, answer: string) => {
-    setAnswers((prevAnswers) => ({
-      ...prevAnswers,
-      [questionId]: answer,
-    }));
+  const handleAnswer = async (question: string, answer: string) => {
+    setAnswers((prevAnswers) => {
+      const answers = { ...prevAnswers, [question]: answer };
+      return answers;
+    });
 
     // Move to the next question
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
 
-    console.log(answers);
+    if (Object.keys(answers).length === 10) {
+      const data = {
+        name: registerData.name,
+        email: registerData.email,
+        ...answers,
+      };
+
+      const url =
+        "https://script.google.com/macros/s/AKfycbwxu57s8w2Pk2Hxj26aXQtnrDpXM4JJcR-QuKpi1PkC17nfaCUnbTEbzvAnNvcB-33YRA/exec";
+
+      const loading = (value: boolean) => {
+        setLoading(value);
+      };
+
+      const records = await postRecords(url, data, loading);
+
+      console.log(records);
+    }
   };
 
   const currentQuestion = questions[currentQuestionIndex];
@@ -65,13 +71,13 @@ const Questionnaire: React.FC = () => {
           <div className="flex justify-center space-x-10 mb-3">
             <button
               className={`px-10 py-1 font-medium text-md   border text-[#8FC03F] border-[#8FC03F] rounded `}
-              onClick={() => handleAnswer(currentQuestion.id, "yes")}
+              onClick={() => handleAnswer(currentQuestion.question, "yes")}
             >
               YES
             </button>
             <button
               className={`px-10 py-1 font-medium text-md  text-[#D50000] border-[#D50000] border rounded `}
-              onClick={() => handleAnswer(currentQuestion.id, "no")}
+              onClick={() => handleAnswer(currentQuestion.question, "no")}
             >
               NO
             </button>

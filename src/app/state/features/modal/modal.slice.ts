@@ -5,17 +5,22 @@ import { createSlice } from "@reduxjs/toolkit";
 export interface modalState {
   openRegisterModal: boolean;
   openQuestionaireModal: boolean;
+  openSideModal: boolean;
 }
 
 const initialState: modalState = {
   openRegisterModal: false,
   openQuestionaireModal: false,
+  openSideModal: false,
 };
 
 export const modalSlice = createSlice({
   name: "modal",
   initialState,
   reducers: {
+    toggleSideModal: (state) => {
+      state.openSideModal = !state.openSideModal;
+    },
     resetModals: (state) => {
       state.openQuestionaireModal = false;
       state.openRegisterModal = false;
@@ -36,6 +41,6 @@ export const modalSlice = createSlice({
   },
 });
 
-export const { toggleModal, resetModals } = modalSlice.actions;
+export const { toggleModal, resetModals,toggleSideModal } = modalSlice.actions;
 
 export default modalSlice.reducer;

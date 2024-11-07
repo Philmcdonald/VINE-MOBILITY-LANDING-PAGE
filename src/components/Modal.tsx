@@ -3,7 +3,7 @@
 import React, { ReactNode } from "react";
 import { Modal as PopUp } from "antd";
 import { useDispatch } from "react-redux";
-import { toggleModal } from "@/app/state/features/modal/modal.slice";
+import { resetModals } from "@/app/state/features/modal/modal.slice";
 
 interface ModalProps {
   isOpen: boolean;
@@ -14,8 +14,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, children }) => {
   const dispatch = useDispatch();
 
   const handleCancel = () => {
-    console.log("Clicked cancel button");
-    dispatch(toggleModal({}));
+    dispatch(resetModals());
   };
 
   return (

@@ -7,14 +7,15 @@ import Image from "next/image";
 import { Form, Input } from "antd";
 import { useDispatch } from "react-redux";
 import { toggleModal } from "@/app/state/features/modal/modal.slice";
+import { storeRegisterData } from "@/app/state/features/form/form.slice";
 import { useState } from "react";
 import postRecords from "@/utils/helpers/sheet.helper";
 
-interface FormAttributeI {
-  name: string;
-  email: string;
-  phone: string;
-}
+// interface FormAttributeI {
+//   name: string;
+//   email: string;
+//   phone: string;
+// }
 
 const RegisterModal = () => {
   const { openRegisterModal } = useSelector((state: RootState) => state.modal);
@@ -23,7 +24,7 @@ const RegisterModal = () => {
 
   const dispatch = useDispatch();
 
-  const onFinish = async (values: FormAttributeI) => {
+  const onFinish = async (values) => {
     const url =
       "https://script.google.com/macros/s/AKfycbz0vppZdm7yUzpBUqGtvVgvrHjy14KkFg2uYdHkQagRAgFJubkPe3D3MknbsrJ2iTom3w/exec";
 
@@ -32,6 +33,8 @@ const RegisterModal = () => {
     };
 
     const records = await postRecords(url, values, loading);
+
+    dispatch(storeRegisterData(values));
 
     if (records) {
       dispatch(toggleModal({ type: "questions" }));
