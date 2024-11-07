@@ -54,7 +54,7 @@ const Proposition = () => {
 
       {/* Second Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-16 md:pt-10 md:pb-3 md:mt-16">
-      <h3 className="font-bold text-3xl sm:text-4xl my-5">
+      <h3 className="font-bold text-3xl sm:text-4xl mt-5 md:mb-10">
           Exclusive Pre-Launch Offer
         </h3>
 
