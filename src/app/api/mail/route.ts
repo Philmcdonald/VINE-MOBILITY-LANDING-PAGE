@@ -13,8 +13,8 @@ export async function POST(req: NextRequest) {
             from: "godspoweraino@gmail.com", // Update with your 'from' email address
             subject,
             body,
-            // templateName, // Optional: Use a template if available
-            // replacements, // Optional: Replace variables in the template
+            templateName,
+            replacements,
             // attachments, // Optional: Add attachments
         };
 

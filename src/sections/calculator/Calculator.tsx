@@ -61,6 +61,8 @@ const Calculator = () => {
 
         const results = calculateCostComparison(userInputs);
 
+        console.log(results);
+
         setSavings(results.monthlySavings);
         form.resetFields();
     };
