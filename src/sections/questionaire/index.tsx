@@ -13,6 +13,8 @@ const Questionnaire: React.FC = () => {
   const [answers, setAnswers] = useState<{ [key: number]: string }>({});
   const [loading, setLoading] = useState(false);
 
+  console.log(loading)
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const { registerData } = useSelector((state: RootState) => state.form);
