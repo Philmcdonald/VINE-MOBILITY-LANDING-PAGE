@@ -70,7 +70,7 @@ const Proposition = () => {
             </p>
 
             <p className="font-medium text-[.9rem] md:text-[1.05rem] leading-snug mb-5">
-              <strong>Exclusive discount</strong> on all EV chargers before
+              <strong>- Exclusive discount</strong> on all EV chargers before
               launch day <br /> - <strong>Free installation</strong>
             </p>
 
