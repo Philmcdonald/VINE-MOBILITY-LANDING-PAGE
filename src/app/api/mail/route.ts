@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
             body,
             templateName,
             replacements,
-            // attachments, // Optional: Add attachments
+            attachments, // Optional: Add attachments
         };
 
         // Send the email
@@ -36,8 +36,9 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET(req: NextRequest) {
+    console.log(req);
     return NextResponse.json(
-        { message: "this is a get request" },
+        { message: "Email Template route" },
         { status: 200 }
     );
 }
