@@ -6,14 +6,17 @@ const cardContent = [
   {
     src: "/icons/card1.png",
     text: "Keep your property ahead of the tech curve",
+    img: "/proposition/card/cardOne.jpg",
   },
   {
     src: "/icons/card2.png",
     text: "Attract higher offers from buyers and renters",
+    img: "/proposition/card/cardTwo.jpg",
   },
   {
     src: "/icons/card3.png",
     text: "Boost tenant retention and satisfaction",
+    img: "/proposition/card/cardThree.jpg",
   },
 ];
 
@@ -29,10 +32,11 @@ const Proposition = () => {
         </h3>
 
         {/* Card Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-14">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-14"> */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7 projects__container">
           {cardContent.map((card, index) => {
             return (
-              <Card key={index}>
+              <Card image={card.img} key={index}>
                 <div>
                   <Image
                     alt=""
@@ -43,7 +47,7 @@ const Proposition = () => {
                   />
                 </div>
 
-                <p className="font-bold text-lg leading-snug w-[80%] mx-auto sm:w-[90%]">
+                <p className="font-medium text-white text-md leading-snug w-[70%] mx-auto sm:w-[90%]">
                   {card.text}
                 </p>
               </Card>
