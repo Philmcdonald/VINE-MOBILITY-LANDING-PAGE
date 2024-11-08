@@ -243,7 +243,7 @@ const Calculator = () => {
           <Section classes="pt-5 border-t border-t-[#8FC03FB2]">
             <div className=" mt-6 grid grid-cols-1">
               {savings !== 0 && (
-                <h1 className=" mx-auto  mb-14">{`₦${savings} saved monthly`}</h1>
+                <h1 className=" mx-auto text-[2rem] md:text-[3rem] mb-[2rem] md:mb-[3rem]">{`₦${savings} Saved Monthly`}</h1>
               )}
 
               <div className="grid place-items-center">
