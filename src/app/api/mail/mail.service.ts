@@ -14,9 +14,8 @@ class MailService {
                 port: 465,
                 secure: true,
                 auth: {
-                    user: "godspoweraino@gmail.com",
-                    pass: "xddasgqlpgfqnsts ",
-                    // pass: "xdda sgql pgfq nsts ",
+                    user: "Seunphilip95@gmail.com",
+                    pass: "kaabbqymglpkqgse",
                 },
             }
 

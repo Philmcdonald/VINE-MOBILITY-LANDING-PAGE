@@ -10,6 +10,7 @@ import postRecords from "@/utils/helpers/sheet.helper";
 import calculateCostComparison from ".";
 import { CalculatorInputs } from ".";
 import { useMediaQuery } from "@/hooks";
+import sendMail from "@/utils/helpers/mail.helper";
 
 interface FormAttributeI {
   email: string;
@@ -40,17 +41,19 @@ const Calculator = () => {
     const url =
       "https://script.google.com/macros/s/AKfycbzMBKl2MWR9HcJWjBMhadL4SO4Cty318FqCqeScN-XXP9rK_wZQHLfl6UlcktADaIJOng/exec";
 
+    // const url = process.env.SHEET_CALCULATOR;
+
     const loading = (value: boolean) => {
       setLoading(value);
     };
+
+    console.log(url, "this is the evn file");
 
     await postRecords(
       url,
       { name: values.name, email: values.email, phone: values.phone },
       loading
     );
-
-    console.log(values);
 
     const userInputs: CalculatorInputs = {
       vehicleType: "sedan",
@@ -63,7 +66,24 @@ const Calculator = () => {
 
     console.log(results);
 
+    const payload = {
+      to: values.email,
+      subject: "Discover Your Potential Savings with Vine Mobility!",
+      templateName: "thankYou",
+      replacements: {
+        userName: values.name,
+        dailyIceCost: results.dailyIceCost.toLocaleString(),
+        monthlyIceCost: results.monthlyIceCost.toLocaleString(),
+        dailyEvCost: results.dailyEvCost.toLocaleString(),
+        monthlyEvCost: results.monthlyEvCost.toLocaleString(),
+        monthlySavings: results.monthlySavings.toLocaleString(),
+      },
+    };
+
+    await sendMail(payload);
+
     setSavings(results.monthlySavings);
+
     form.resetFields();
   };
 
@@ -243,7 +263,7 @@ const Calculator = () => {
           <Section classes="pt-5 border-t border-t-[#8FC03FB2]">
             <div className=" mt-6 grid grid-cols-1">
               {savings !== 0 && (
-                <h1 className=" mx-auto text-[2rem] md:text-[3rem] mb-[2rem] md:mb-[3rem]">{`₦${savings} Saved Monthly`}</h1>
+                <h1 className=" mx-auto text-[2rem] md:text-[3rem] mb-[2rem] md:mb-[3rem]">{`₦${savings.toLocaleString()} Saved Monthly`}</h1>
               )}
 
               <div className="grid place-items-center">

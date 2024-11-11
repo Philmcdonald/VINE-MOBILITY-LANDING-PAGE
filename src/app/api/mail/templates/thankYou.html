@@ -1,308 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Welcome Employee</title>
-        <style></style>
-    </head>
-    <body
-        style="
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            background: #edf0f2;
-            text-align: center;
-            padding-right: 15px;
-            padding-left: 15px;
-        "
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank you</title>
+    <style></style>
+  </head>
+  <body
+    style="
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      background: #edf0f2;
+      text-align: center;
+      padding-right: 15px;
+      padding-left: 15px;
+    "
+  >
+    <center
+      style="
+        width: 100%;
+        background: #edf0f2;
+        text-align: center;
+        display: inline-block;
+        margin: auto;
+      "
     >
-        <center
-            style="
-                width: 100%;
-                background: #edf0f2;
-                text-align: center;
-                display: inline-block;
-                margin: auto;
-            "
+      <div
+        style="
+          width: 40em;
+          padding-top: 2em;
+          display: inline-block;
+          text-align: left;
+        "
+      >
+        <div style="display: inline-block; margin: 0 auto; margin-bottom: 30px">
+          <img
+            src="https://res.cloudinary.com/dew2uztns/image/upload/v1731003713/logo_db0fum.png"
+            alt="logo"
+            height="40"
+          />
+        </div>
+
+        <div
+          style="background: #fff; border-radius: 10px; padding-bottom: 50px"
         >
-            <div
-                style="
-                    width: 40em;
-                    padding-top: 2em;
-                    display: inline-block;
-                    text-align: left;
-                "
+          <img
+            src="https://res.cloudinary.com/dew2uztns/image/upload/v1731141899/EMAILBANNER.jpg"
+            alt="email background"
+            height="200"
+            width="100%"
+          />
+          <div
+            style="
+              padding-top: 1px;
+              padding-bottom: 5px;
+              padding-left: 10px;
+              padding-right: 10px;
+            "
+          >
+            <h1
+              style="
+                padding-top: opx;
+                margin-top: 20px;
+                text-transform: capitalize;
+              "
             >
-                <div
-                    style="
-                        display: inline-block;
-                        margin: 0 auto;
-                        margin-bottom: 30px;
-                    "
-                >
-                    <img
-                        src="https://res.cloudinary.com/dew2uztns/image/upload/v1731003713/logo_db0fum.png"
-                        alt="logo"
-                        height="40"
-                    />
-                </div>
+              Hi {{userName}}
+            </h1>
+            <p>
+              Thank you for using our Ev Savings Calculator! We're excited to
+              share your personal savings breakdown with you.
+            </p>
 
-                <div
-                    style="
-                        background: #fff;
-                        border-radius: 10px;
-                        padding-bottom: 50px;
-                    "
+            <div>
+              <h3 style="text-transform: uppercase">
+                Here's what you could save:
+              </h3>
+
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr;
+                  /* gap: 3px; */
+                  width: 60%;
+                "
+              >
+                <h4
+                  style="padding: 0; margin: 0; font-family: Arial, sans-serif"
                 >
-                    <img
-                        src="https://res.cloudinary.com/ddvaelej7/image/upload/v1668696501/toperBg_er8vib.png"
-                        alt="email background"
-                        height="200"
-                        width="100%"
-                    />
-                    <div
+                  <table
+                    style="
+                      width: 100%;
+                      border-collapse: collapse;
+                      table-layout: fixed;
+                    "
+                  >
+                    <tr>
+                      <td style="text-align: left; padding: 0">
+                        Daily Fuel Cost:
+                      </td>
+                      <td
                         style="
-                            padding-top: 1px;
-                            padding-bottom: 5px;
-                            padding-left: 10px;
-                            padding-right: 10px;
+                          text-align: left;
+                          padding: 0;
+                          width: 50%;
+                          word-wrap: break-word;
                         "
-                    >
-                        <h1 style="padding-top: opx; margin-top: 0px">
-                            Hi {{userName}}
-                        </h1>
-                        <p>
-                            Thank you for using our Ev Savings Calculator! We're
-                            excited to share your personal savings breakdown
-                            with you.
-                        </p>
+                      >
+                        ₦{{dailyIceCost}}
+                      </td>
+                    </tr>
+                  </table>
+                </h4>
 
-                        <div>
-                            <h3 style="text-transform: uppercase">
-                                Here's what you could save:
-                            </h3>
-
-                            <div
-                                style="
-                                    display: grid;
-                                    grid-template-columns: 1fr;
-                                    /* gap: 3px; */
-                                    width: 60%;
-                                "
-                            >
-                                <h4
-                                    style="
-                                        padding: 0;
-                                        margin: 0;
-                                        font-family: Arial, sans-serif;
-                                    "
-                                >
-                                    <table
-                                        style="
-                                            width: 100%;
-                                            border-collapse: collapse;
-                                        "
-                                    >
-                                        <tr>
-                                            <td
-                                                style="
-                                                    text-align: left;
-                                                    padding: 0;
-                                                "
-                                            >
-                                                Daily Fuel Cost:
-                                            </td>
-                                            <td
-                                                style="
-                                                    text-align: left;
-                                                    padding: 0;
-                                                "
-                                            >
-                                                ₦{{dailyIceCost}}
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </h4>
-
-                                <h4
-                                    style="
-                                        padding: 0;
-                                        margin: 0;
-                                        font-family: Arial, sans-serif;
-                                    "
-                                >
-                                    <table
-                                        style="
-                                            width: 100%;
-                                            border-collapse: collapse;
-                                        "
-                                    >
-                                        <tr>
-                                            <td
-                                                style="
-                                                    text-align: left;
-                                                    padding: 0;
-                                                "
-                                            >
-                                                Daily EV Cost:
-                                            </td>
-                                            <td
-                                                style="
-                                                    text-align: left;
-                                                    padding: 0;
-                                                "
-                                            >
-                                                ₦{{dailyEvCost}}
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </h4>
-
-                                <h4
-                                    style="
-                                        padding: 0;
-                                        margin: 0;
-                                        font-family: Arial, sans-serif;
-                                    "
-                                >
-                                    <table
-                                        style="
-                                            width: 100%;
-                                            border-collapse: collapse;
-                                        "
-                                    >
-                                        <tr>
-                                            <td
-                                                style="
-                                                    text-align: left;
-                                                    padding: 0;
-                                                "
-                                            >
-                                                Monthly Fuel Cost:
-                                            </td>
-                                            <td
-                                                style="
-                                                    text-align: left;
-                                                    padding: 0;
-                                                "
-                                            >
-                                                ₦{{monthlyIceCost}}
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </h4>
-                                <h4
-                                    style="
-                                        display: flex;
-                                        justify-content: space-between;
-                                        padding: 0%;
-                                        margin: 0%;
-                                    "
-                                >
-                                    <table
-                                        style="
-                                            width: 100%;
-                                            border-collapse: collapse;
-                                        "
-                                    >
-                                        <tr>
-                                            <!-- Left-aligned text -->
-                                            <td
-                                                style="
-                                                    text-align: left;
-                                                    padding: 0;
-                                                "
-                                            >
-                                                Monthly EV Cost:
-                                            </td>
-                                            <!-- Right-aligned text -->
-                                            <td
-                                                style="
-                                                    text-align: left;
-                                                    padding: 0;
-                                                "
-                                            >
-                                                ₦{{monthlyEvCost}}
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </h4>
-                            </div>
-
-                            <p>
-                                Switching to an electric vehicle (EV) not only
-                                saves you money but also contributes to a
-                                greener planet. Its a win win
-                            </p>
-                        </div>
-
-                        <div>
-                            <h3>What's Next?</h3>
-
-                            <p>
-                                We're on a mission to make EV adoption easier
-                                for everyone. Stay tuned for exciting updates
-                                and announcements from Vine Mobility as we work
-                                on bringing you the best EV solution.
-                            </p>
-
-                            <h3>Stay Engaged:</h3>
-
-                            <p>
-                                Follow us on social media: Get the latest news,
-                                tips, and updates. (link)
-                            </p>
-
-                            <div>
-                                <p>
-                                    <strong>Join our community:</strong> Connect
-                                    with other EV enthusiasts and share your
-                                    journey:
-                                </p>
-
-                                <p>
-                                    <strong>Share your Feedback:</strong> Help
-                                    us shape the future of Vine Mobility by
-                                    letting gus know what you need and expect
-                                    from us.
-                                </p>
-
-                                <p>
-                                    We're trilled to have you with us on this
-                                    journey towards a sustainable future. YOur
-                                    interest and feedback are invaluable to us.
-                                </p>
-
-                                <div>
-                                    <p>Best Regards,</p>
-                                    <p>
-                                        Tina <br />Customer Success Team<br />Vine
-                                        Mobility
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- This is for the footer -->
-                <p
-                    style="
-                        font-size: 15px;
-                        text-align: center;
-                        padding-top: 30px;
-                        padding-bottom: 30px;
-                        color: #363535;
-                    "
+                <h4
+                  style="padding: 0; margin: 0; font-family: Arial, sans-serif"
                 >
-                    © 2024 Vine Mobility, Vine Mobility and the Vine Mobility
-                    logo are registered trademarks of Vine Mobility.
-                </p>
+                  <table
+                    style="
+                      width: 100%;
+                      border-collapse: collapse;
+                      table-layout: fixed;
+                    "
+                  >
+                    <tr>
+                      <td style="text-align: left; padding: 0">
+                        Daily EV Cost:
+                      </td>
+                      <td
+                        style="
+                          text-align: left;
+                          padding: 0;
+                          width: 50%;
+                          word-wrap: break-word;
+                        "
+                      >
+                        ₦{{dailyEvCost}}
+                      </td>
+                    </tr>
+                  </table>
+                </h4>
+
+                <h4
+                  style="padding: 0; margin: 0; font-family: Arial, sans-serif"
+                >
+                  <table
+                    style="
+                      width: 100%;
+                      border-collapse: collapse;
+                      table-layout: fixed;
+                    "
+                  >
+                    <tr>
+                      <td style="text-align: left; padding: 0">
+                        Monthly Fuel Cost:
+                      </td>
+                      <td
+                        style="
+                          text-align: left;
+                          padding: 0;
+                          width: 50%;
+                          word-wrap: break-word;
+                        "
+                      >
+                        ₦{{monthlyIceCost}}
+                      </td>
+                    </tr>
+                  </table>
+                </h4>
+
+                <h4
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0;
+                    margin: 0;
+                  "
+                >
+                  <table
+                    style="
+                      width: 100%;
+                      border-collapse: collapse;
+                      table-layout: fixed;
+                    "
+                  >
+                    <tr>
+                      <td style="text-align: left; padding: 0">
+                        Monthly EV Cost:
+                      </td>
+                      <td
+                        style="
+                          text-align: left;
+                          padding: 0;
+                          width: 50%;
+                          word-wrap: break-word;
+                        "
+                      >
+                        ₦{{monthlyEvCost}}
+                      </td>
+                    </tr>
+                  </table>
+                </h4>
+
+                <h2
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0;
+                    margin: 10px 0;
+                  "
+                >
+                  ₦{{monthlySavings}} Saved Monthly !
+                </h2>
+              </div>
+
+              <p>
+                Switching to an electric vehicle (EV) not only saves you money
+                but also contributes to a greener planet.<br />
+                Its a win win
+              </p>
             </div>
-        </center>
-    </body>
+
+            <div>
+              <h3>What's Next?</h3>
+
+              <p>
+                We're on a mission to make EV adoption easier for everyone. Stay
+                tuned for exciting updates and announcements from Vine Mobility
+                as we work on bringing you the best EV solution.
+              </p>
+
+              <h3>Stay Engaged:</h3>
+
+              <div>
+                <p>
+                  <strong>Follow us on social media:</strong> Get the latest
+                  news, tips, and updates. (link)
+                  <br />
+                  <strong>Join our community:</strong> Connect with other EV
+                  enthusiasts and share your journey
+                  <br />
+                  <strong>Share your Feedback:</strong> Help us shape the future
+                  of Vine Mobility by letting gus know what you need and expect
+                  from us.
+                </p>
+
+                <!-- <p>
+                  <strong>Join our community:</strong> Connect with other EV
+                  enthusiasts and share your journey
+                </p>
+
+                <p>
+                  <strong>Share your Feedback:</strong> Help us shape the future
+                  of Vine Mobility by letting gus know what you need and expect
+                  from us.
+                </p>
+
+                -->
+                <p>
+                  We're trilled to have you with us on this journey towards a
+                  sustainable future. YOur interest and feedback are invaluable
+                  to us.
+                </p>
+
+                <div>
+                  <p>Best Regards,</p>
+                  <p>Tina <br />Customer Success Team<br />Vine Mobility</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- This is for the footer -->
+        <p
+          style="
+            font-size: 15px;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            color: #363535;
+          "
+        >
+          © 2024 Vine Mobility, Vine Mobility and the Vine Mobility logo are
+          registered trademarks of Vine Mobility.
+        </p>
+      </div>
+    </center>
+  </body>
 </html>
 
 <!-- <a
