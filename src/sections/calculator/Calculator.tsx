@@ -41,9 +41,6 @@ const Calculator = () => {
     const url =
       "https://script.google.com/macros/s/AKfycbzMBKl2MWR9HcJWjBMhadL4SO4Cty318FqCqeScN-XXP9rK_wZQHLfl6UlcktADaIJOng/exec";
 
-    const loading = (value: boolean) => {
-      setLoading(value);
-    };
     // const url = process.env.SHEET_CALCULATOR;
 
     const loading = (value: boolean) => {
