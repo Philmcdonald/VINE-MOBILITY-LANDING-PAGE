@@ -36,7 +36,7 @@ const Hero = () => {
         </div>
 
         {/* ============== Image ================ */}
-        <div className=" max-h-[20rem] md:max-h-[21rem] lg:max-h-[28rem] rounded-2xl w-full md:w-[90%]  lg:w-[85%] justify-self-end relative heroSlide">
+        <div className=" max-h-[20rem] md:max-h-[21rem] lg:max-h-[28rem] rounded-2xl w-full md:w-[92%]  lg:w-[85%] justify-self-end relative heroSlide">
           <div className="heroFloatingText top-[15%] right-[-50px] sm:right-[-25px]">
             Businesses
           </div>

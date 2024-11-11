@@ -1,6 +1,13 @@
 import axios from "axios";
 
-const sendMail = async (payload) => {
+interface EmailData {
+  to: string;
+  subject: string;
+  templateName: string;
+  replacements: Record<string, unknown>;
+}
+
+const sendMail = async (payload: EmailData) => {
   const url = "/api/mail";
 
   try {
