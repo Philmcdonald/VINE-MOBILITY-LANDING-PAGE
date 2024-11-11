@@ -41,6 +41,9 @@ const Calculator = () => {
     const url =
       "https://script.google.com/macros/s/AKfycbzMBKl2MWR9HcJWjBMhadL4SO4Cty318FqCqeScN-XXP9rK_wZQHLfl6UlcktADaIJOng/exec";
 
+    const loading = (value: boolean) => {
+      setLoading(value);
+    };
     // const url = process.env.SHEET_CALCULATOR;
 
     const loading = (value: boolean) => {
@@ -92,17 +95,20 @@ const Calculator = () => {
       <div>
         <Form onFinish={onFinish} form={form} className="grid grid-cols-1 ">
           {/* ================ Form ==================== */}
-          <div className="text-center md:text-left w-full md:w-[55%] grid grid-cols-1 gap-4 md:gap-9">
+          <div className="text-center md:text-left w-full md:w-[55%] grid grid-cols-1 gap-2 md:gap-9">
             <>
-              <h1 className="text-4xl">Discover your savings with an EV</h1>
-              <p className="text-[16px]">
+              <h1 className="text-4xl mb-4 md:mb-0">
+                Discover your savings with an EV
+              </h1>
+
+              <p className="mb-3 md:mb-0">
                 Get a quick estimate of how much you can save by switching to an
                 electric vehicle and using our state-of-the-art EV chargers
               </p>
             </>
 
             <Form.Item
-              className="font-bold"
+              className="font-medium sm:font-bold"
               layout="vertical"
               label="Full Name"
               name="name"
@@ -118,7 +124,7 @@ const Calculator = () => {
 
             <Form.Item
               layout="vertical"
-              className="font-bold"
+              className="font-medium sm:font-bold"
               label="Email"
               name="email"
             >
@@ -132,7 +138,7 @@ const Calculator = () => {
             </Form.Item>
 
             <Form.Item
-              className="font-bold"
+              className="font-medium sm:font-bold"
               layout="vertical"
               label="Phone Number"
               name="phone"
@@ -149,7 +155,7 @@ const Calculator = () => {
 
           {/* ================ Calculator ==================== */}
           <div className="mt-5 md:mt-20">
-            <p className="text-lg text-center md:text-left mb-4 font-semibold">
+            <p className="text-lg text-center md:text-left mb-4 font-semibold uppercase md:capitalize">
               Use this to calculate your EV energy cost
             </p>
 
@@ -159,7 +165,7 @@ const Calculator = () => {
 
             <div className="border rounded-tl-3xl rounded-tr-3xl  overflow-hidden">
               <div className=" md:grid md:grid-cols-4 grid-cols-1 text-lg text-center text-white py-5 bg-primary-main">
-                <p className="md:hidden">Energy Saving Calculator</p>
+                <p className="md:hidden text-lg">Energy Saving Calculator</p>
                 <p className="hidden md:block">Current Car Type</p>
                 <p className="hidden md:block">Average Daily KM Traveled</p>
                 <p className="hidden md:block">Petrol Cost (per litre)</p>
@@ -168,7 +174,7 @@ const Calculator = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-4 py-8 place-items-center">
                 <Form.Item
-                  className="w-[80%]"
+                  className="w-[90%] md:w-[80%]"
                   label={isMobile ? "Car type" : null} // Only show label on mobile
                   name="carType"
                   rules={[
@@ -188,7 +194,7 @@ const Calculator = () => {
                 </Form.Item>
 
                 <Form.Item
-                  className="w-[80%]"
+                  className="w-[90%] md:w-[80%]"
                   label={isMobile ? "Average Daily KM Traveled" : null} // Only show label on mobile
                   name="dailyTravelDistance"
                   rules={[
@@ -210,7 +216,7 @@ const Calculator = () => {
                 <Form.Item
                   name="petrolPricePerLitre"
                   label={isMobile ? "Petrol Cost (per litre)" : null}
-                  className="w-[80%]"
+                  className="w-[90%] md:w-[80%]"
                 >
                   <Input
                     className="py-3 font-normal text-[12px] border border-black"
@@ -224,7 +230,7 @@ const Calculator = () => {
                 <Form.Item
                   name="electricityPricePerKwh"
                   label={isMobile ? "Electricity cost (Kwh)" : null}
-                  className="w-[80%]"
+                  className="w-[90%] md:w-[80%]"
                 >
                   <Input
                     className="py-3 font-normal text-[12px] border border-black"

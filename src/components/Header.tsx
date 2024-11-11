@@ -8,94 +8,97 @@ import SideModal from "./SideModal";
 import { useDispatch } from "react-redux";
 import { toggleSideModal } from "@/app/state/features/modal/modal.slice";
 import { Bars3Icon } from "@heroicons/react/24/outline";
+import Container from "./Container";
 
 /* ============================== Headers Start ==================================== */
 
 const Header = () => {
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  const router = useRouter();
+    const router = useRouter();
 
-  const handleNavigate = () => {
-    router.push("/calculator");
-  };
+    const handleNavigate = () => {
+        router.push("/calculator");
+    };
 
-  return (
-    <header className="bg-white shadow-sm text-md">
-      <nav
-        aria-label="Global"
-        className="mx-auto flex items-center justify-between py-5 w-[95%] md:max-w-[800px] lg:max-w-[1120px]"
-      >
-        {/* ================================================================== */}
+    return (
+        <header className='bg-white shadow-md'>
+            <Container>
+                <nav
+                    aria-label='Global'
+                    className='mx-auto flex items-center justify-between py-5'
+                >
+                    {/* ================================================================== */}
 
-        {/* Logo Section */}
-        <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Vine Mobility</span>
-            <div className="">
-              <Image
-                alt="Vine Mobility Logo"
-                src="/vine-mobility/logo.png"
-                className="h-10 md:h-16 w-auto"
-                height={150}
-                width={200}
-              />
-            </div>
-          </a>
-        </div>
+                    {/* Logo Section */}
+                    <div className='flex lg:flex-1'>
+                        <a href='#' className='-m-1.5 p-1.5'>
+                            <span className='sr-only'>Vine Mobility</span>
+                            <div className=''>
+                                <Image
+                                    alt='Vine Mobility Logo'
+                                    src='/vine-mobility/logo.png'
+                                    className='h-10 md:h-[50px] w-auto'
+                                    height={150}
+                                    width={200}
+                                />
+                            </div>
+                        </a>
+                    </div>
 
-        {/* ================================================================== */}
-        {/* Mobile Menu Button */}
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            onClick={() => dispatch(toggleSideModal())}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
-          </button>
-        </div>
+                    {/* ================================================================== */}
+                    {/* Mobile Menu Button */}
+                    <div className='flex lg:hidden'>
+                        <button
+                            type='button'
+                            onClick={() => dispatch(toggleSideModal())}
+                            className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'
+                        >
+                            <span className='sr-only'>Open main menu</span>
+                            <Bars3Icon aria-hidden='true' className='h-6 w-6' />
+                        </button>
+                    </div>
 
-        {/* ================================================================== */}
-        {/* Desktop navigation menu */}
-        <div className="hidden text-lg lg:flex lg:gap-x-16 mr-7">
-          <Link href="/">
-            <span className="font-semibold hover:text-primary-main leading-6 text-gray-900">
-              Home
-            </span>
-          </Link>
+                    {/* ================================================================== */}
+                    {/* Desktop navigation menu */}
+                    <div className='hidden text-sm lg:flex lg:gap-x-16 mr-7'>
+                        <Link href='/'>
+                            <span className='font-semibold hover:text-primary-main leading-6 text-gray-900'>
+                                Home
+                            </span>
+                        </Link>
 
-          <a
-            href="#proposition"
-            className="hover:text-primary-main font-semibold leading-6 text-gray-900"
-          >
-            Why Vine Mobility?
-          </a>
-          <a
-            href="#testimonial"
-            className="hover:text-primary-main font-semibold leading-6 text-gray-900"
-          >
-            What Are People Saying?
-          </a>
-        </div>
+                        <a
+                            href='#proposition'
+                            className='hover:text-primary-main font-medium leading-6 text-gray-900'
+                        >
+                            Why Vine Mobility?
+                        </a>
+                        <a
+                            href='#testimonial'
+                            className='hover:text-primary-main font-semibold leading-6 text-gray-900'
+                        >
+                            What Are People Saying?
+                        </a>
+                    </div>
 
-        {/* ================================================================== */}
-        {/* Desktop Button */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Button
-            fn={handleNavigate}
-            type={ButtonType.green}
-            textSize="text-xl"
-            // width="px-[60px]"
-            text="EV Calculator"
-          />
-        </div>
-      </nav>
+                    {/* ================================================================== */}
+                    {/* Desktop Button */}
+                    <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
+                        <Button
+                            fn={handleNavigate}
+                            type={ButtonType.green}
+                            // textSize='text-[12px]'
+                            // width="px-[60px]"
+                            text='EV Calculator'
+                        />
+                    </div>
+                </nav>
+            </Container>
 
-      {/* ================================================================== */}
-      {/* Mobile Menu (Dialog) */}
-      {/* <Dialog
+            {/* ================================================================== */}
+            {/* Mobile Menu (Dialog) */}
+            {/* <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
         className="lg:hidden"
@@ -179,14 +182,14 @@ const Header = () => {
         </DialogPanel>
       </Dialog> */}
 
-      <SideModal />
-      {/* ================================================================== */}
-    </header>
-  );
+            <SideModal />
+            {/* ================================================================== */}
+        </header>
+    );
 };
 
 {
-  /* ============================== Headers end==================================== */
+    /* ============================== Headers end==================================== */
 }
 
 export default Header;
