@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const sendMail = async (payload) => {
-  const url = "http://localhost:3000/api/mail";
+  const url = "https://www.vine-mobility.com/api/mail";
 
   try {
     const data = await axios.post(url, payload);
