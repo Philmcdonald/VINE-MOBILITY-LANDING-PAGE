@@ -10,7 +10,8 @@ import postRecords from "@/utils/helpers/sheet.helper";
 import calculateCostComparison from ".";
 import { CalculatorInputs } from ".";
 import { useMediaQuery } from "@/hooks";
-import sendMail from "@/utils/helpers/mail.helper";
+// import sendMail from "@/utils/helpers/mail.helper";
+import axios from "axios";
 
 interface FormAttributeI {
   email: string;
@@ -74,7 +75,16 @@ const Calculator = () => {
       },
     };
 
-    await sendMail(payload);
+    const api = "https://www.vine-mobility.com/api/mail";
+
+    try {
+      const data = await axios.post(api, payload);
+      return data.data;
+    } catch (error) {
+      console.log(error);
+    }
+
+    // await sendMail(payload);
 
     setSavings(results.monthlySavings);
 
