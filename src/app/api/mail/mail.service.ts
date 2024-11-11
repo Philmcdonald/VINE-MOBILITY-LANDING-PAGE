@@ -2,7 +2,7 @@ import { createTransport, Transporter } from "nodemailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
 import { MailOptionsAttributeI } from "./interface";
 import fs from "fs";
-import path from "path";
+// import path from "path";
 import Handlebars from "handlebars";
 import Mail from "nodemailer/lib/mailer";
 
@@ -30,14 +30,7 @@ class MailService {
     };
 
     if (templateName) {
-      const templatePath = path.resolve(
-        "src",
-        "app",
-        "api",
-        "mail",
-        "templates",
-        `${templateName}.html`
-      );
+      const templatePath = "./template/${templateName}.html";
       const source = fs.readFileSync(templatePath, "utf-8");
       const template = Handlebars.compile(source);
       const html = template(replacements);

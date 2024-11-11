@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import mailService from "./mail.service";
 
 export async function POST(req: NextRequest) {
+  console.log(req);
   try {
     // Parse the request body to get the email details
     const { to, subject, body, templateName, replacements, attachments } =
