@@ -8,7 +8,7 @@ interface EmailData {
 }
 
 const sendMail = async (payload: EmailData) => {
-  const url = "https://www.vine-mobility.com/api/mail";
+  const url = "/api/mail";
 
   try {
     const data = await axios.post(url, payload);
@@ -19,4 +19,3 @@ const sendMail = async (payload: EmailData) => {
 };
 
 export default sendMail;
-
