@@ -41,13 +41,9 @@ const Calculator = () => {
     const url =
       "https://script.google.com/macros/s/AKfycbzMBKl2MWR9HcJWjBMhadL4SO4Cty318FqCqeScN-XXP9rK_wZQHLfl6UlcktADaIJOng/exec";
 
-    // const url = process.env.SHEET_CALCULATOR;
-
     const loading = (value: boolean) => {
       setLoading(value);
     };
-
-    console.log(url, "this is the evn file");
 
     await postRecords(
       url,
@@ -63,8 +59,6 @@ const Calculator = () => {
     };
 
     const results = calculateCostComparison(userInputs);
-
-    console.log(results);
 
     const payload = {
       to: values.email,
@@ -264,18 +258,24 @@ const Calculator = () => {
 
           {/* ================ Submit and Result ==================== */}
           <Section classes="pt-5 border-t border-t-[#8FC03FB2]">
-            <div className=" mt-6 grid grid-cols-1">
+            <div className="mt-2 md:mt-6 grid grid-cols-1">
               {savings !== 0 && (
-                <h1 className=" mx-auto text-[2rem] md:text-[3rem] mb-[2rem] md:mb-[3rem]">{`₦${savings.toLocaleString()} Saved Monthly`}</h1>
+                <h1 className=" mx-auto text-center text-[2rem] md:text-[3rem] mb-[2rem] md:mb-[3rem]">
+                  <span>{`₦${savings.toLocaleString()}`}</span>
+                  <br />
+                  <span className="text-sm md:text-lg block mt-[5px] md:mt-[12px]">
+                    Saved Monthly
+                  </span>
+                </h1>
               )}
 
               <div className="grid place-items-center">
                 <Button
                   loading={loading}
-                  width="w-[40%]"
+                  width="w-full md:w-[40%]"
                   type={ButtonType.green}
                   text="Submit"
-                  textSize="text-[20px] md:text-[24px]"
+                  textSize="text-[17px] md:text-[24px]"
                   fn={() => {
                     console.log("working well");
                   }}
