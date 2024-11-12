@@ -30,8 +30,9 @@ class MailService {
     };
 
     if (templateName) {
-      const templatePath = "./template/${templateName}.html";
+      const templatePath = "./templates/${templateName}.html";
       const source = fs.readFileSync(templatePath, "utf-8");
+      
       const template = Handlebars.compile(source);
       const html = template(replacements);
 
