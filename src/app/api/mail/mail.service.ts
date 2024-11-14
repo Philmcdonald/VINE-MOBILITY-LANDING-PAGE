@@ -126,7 +126,7 @@ class MailService {
       let templateSource: string;
 
       // In production (Vercel), fetch the template via HTTP
-      const templateUrl = `http://localhost:3000/templates/${templateName}.html`;
+      const templateUrl = `https://www.vine-mobility.com/templates/${templateName}.html`;
 
       try {
         const response = await axios.get(templateUrl);
