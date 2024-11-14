@@ -1,26 +1,26 @@
 import { NextRequest, NextResponse } from "next/server";
-// import mailService from "./mail.service";
+import mailService from "./mail.service";
 
 export async function POST(req: NextRequest) {
   console.log(req);
   try {
     // Parse the request body to get the email details
-    // const { to, subject, body, templateName, replacements, attachments } =
-    //   await req.json();
+    const { to, subject, body, templateName, replacements, attachments } =
+      await req.json();
 
     // Set up the mail options
-    // const mailOptions = {
-    //   to,
-    //   from: "godspoweraino@gmail.com", // Update with your 'from' email address
-    //   subject,
-    //   body,
-    //   templateName,
-    //   replacements,
-    //   attachments, // Optional: Add attachments
-    // };
+    const mailOptions = {
+      to,
+      from: "godspoweraino@gmail.com", // Update with your 'from' email address
+      subject,
+      body,
+      templateName,
+      replacements,
+      attachments, // Optional: Add attachments
+    };
 
     // Send the email
-    // await mailService.sendMail(mailOptions);
+    await mailService.sendMail(mailOptions);
 
     // Respond with a success message
     return NextResponse.json(

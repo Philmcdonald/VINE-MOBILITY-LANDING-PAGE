@@ -30,9 +30,22 @@ class MailService {
     };
 
     if (templateName) {
-      const templatePath = "./templates/${templateName}.html";
+      console.log(templateName);
+
+      const templatePath = `./src/app/api/mail/templates/${templateName}.html`;
+
+      // const source = fs.readFileSync(templatePath, "utf-8");
+
+      // const templatePath = path.join(
+      //   __dirname,
+      //   "templates",
+      //   `${templateName}.html`
+      // );
+
       const source = fs.readFileSync(templatePath, "utf-8");
-      
+
+      console.log(source);
+
       const template = Handlebars.compile(source);
       const html = template(replacements);
 
